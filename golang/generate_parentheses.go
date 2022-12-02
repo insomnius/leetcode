@@ -25,18 +25,6 @@ func generateParenthesis(n int) []string {
 func recParenthesis(n int, parentheses string, left, right int) []string {
 	var parenthesesList []string
 
-	// if len(parentheses) == n*2 {
-	// 	return []string{parentheses}
-	// } else if left < n && left < right {
-	// 	parenthesesList = append(parenthesesList, recParenthesis(n, "("+parentheses, left+1, right)...)
-	// } else if right < n && right < left {
-	// 	parenthesesList = append(parenthesesList, recParenthesis(n, parentheses+")", left, right+1)...)
-	// 	if left < n {
-	// 		fmt.Println("(" + parentheses)
-	// 		parenthesesList = append(parenthesesList, recParenthesis(n, "("+parentheses, left+1, right)...)
-	// 	}
-	// }
-
 	if len(parentheses) == n*2 {
 		return []string{parentheses}
 	}
