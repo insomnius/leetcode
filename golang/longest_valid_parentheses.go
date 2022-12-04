@@ -1,5 +1,7 @@
 package leetcode
 
+// NOTES: Always using stack and index to solve this problem. Since we need to find max, then the stack should be empty when we find the max. So we need to push -1 to the stack first.
+
 /*
 Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses
 substring
