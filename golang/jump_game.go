@@ -28,7 +28,6 @@ Constraints:
 
 */
 
-// GREEDY ALGORITHM IS A KEY
 func canJump(nums []int) bool {
 	index := 0
 	length := len(nums) - 1
@@ -87,5 +86,21 @@ func canJumpalt(nums []int) bool {
 		index += addIndex
 	}
 
+	return true
+}
+
+// GREEDY ALGORITHM IS A KEY
+func canJumpaltGreedy(nums []int) bool {
+	maxLocation := 0
+
+	for i := 0; i < len(nums); i++ {
+		if i > maxLocation {
+			return false
+		}
+
+		if i+nums[i] > maxLocation {
+			maxLocation = i + nums[i]
+		}
+	}
 	return true
 }
