@@ -69,3 +69,41 @@ func jump2(nums []int) int {
 
 	return jump
 }
+
+func jump2alt1(nums []int) int {
+	if nums[0] == 0 {
+		return 0
+	}
+
+	index := 0
+	jump := 0
+	length := len(nums) - 1
+
+	for index < length {
+		max := 0
+		additionalIndex := 0
+
+		i := nums[index]
+		if index+i >= length {
+			jump++
+			return jump
+		}
+
+		for i > 0 {
+			if index+i+nums[index+i] > max {
+				max = index + i + nums[index+i]
+				additionalIndex = i
+			}
+
+			i--
+		}
+
+		jump++
+		index += additionalIndex
+	}
+
+	return jump
+}
+
+// Neetcode solutions
+// https://www.youtube.com/watch?v=Yan0cv2cLy8
