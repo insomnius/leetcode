@@ -17,7 +17,7 @@ func TestValidPalindrome(t *testing.T) {
 		}
 	})
 
-	t.Run("Example 1", func(t *testing.T) {
+	t.Run("Example 2", func(t *testing.T) {
 		s := 1001
 		expected := true
 		got := isPalindrome(s)
