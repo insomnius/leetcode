@@ -58,3 +58,28 @@ func isPalindrome(x int) bool {
 
 	return true
 }
+
+func isPalindromeVariant2(x int) bool {
+	if x == 0 {
+		return true
+	}
+
+	if x < 0 {
+		return false
+	}
+
+	stringX := strconv.Itoa(x)
+
+	left := 0
+	right := len(stringX) - 1
+
+	for left < right {
+		if stringX[left] != stringX[right] {
+			return false
+		}
+		left++
+		right--
+	}
+
+	return true
+}

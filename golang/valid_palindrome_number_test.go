@@ -11,12 +11,20 @@ func TestValidPalindrome(t *testing.T) {
 		if got != expected {
 			t.Errorf("Expected %t, got %t", expected, got)
 		}
+		got = isPalindromeVariant2(s)
+		if got != expected {
+			t.Errorf("Expected %t, got %t", expected, got)
+		}
 	})
 
 	t.Run("Example 1", func(t *testing.T) {
 		s := 1001
 		expected := true
 		got := isPalindrome(s)
+		if got != expected {
+			t.Errorf("Expected %t, got %t", expected, got)
+		}
+		got = isPalindromeVariant2(s)
 		if got != expected {
 			t.Errorf("Expected %t, got %t", expected, got)
 		}
