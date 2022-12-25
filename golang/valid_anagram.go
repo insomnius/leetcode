@@ -51,3 +51,30 @@ func isAnagram(s string, t string) bool {
 
 	return true
 }
+
+func isAnagramAlt1(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	var x, y int
+	char := map[byte]int{}
+
+	for x < len(s) {
+		char[s[x]]++
+		char[t[y]]--
+
+		if char[s[x]] == 0 {
+			delete(char, s[x])
+		}
+
+		if char[t[y]] == 0 {
+			delete(char, t[y])
+		}
+
+		x++
+		y++
+	}
+
+	return len(char) == 0
+}
