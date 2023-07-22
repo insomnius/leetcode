@@ -1,5 +1,7 @@
 package leetcode
 
+import "fmt"
+
 // NOTES: Always using stack and index to solve this problem. Since we need to find max, then the stack should be empty when we find the max. So we need to push -1 to the stack first.
 
 /*
@@ -40,6 +42,7 @@ func longestValidParentheses(s string) int {
 	max := 0
 
 	for i := 0; i < len(s); i++ {
+		fmt.Println(stack)
 		if string(s[i]) == "(" {
 			stack = append(stack, i)
 		} else {
