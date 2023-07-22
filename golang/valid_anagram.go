@@ -1,5 +1,10 @@
 package leetcode
 
+import (
+	"sort"
+	"strings"
+)
+
 // 242. Valid Anagram
 
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
@@ -77,4 +82,18 @@ func isAnagramAlt1(s string, t string) bool {
 	}
 
 	return len(char) == 0
+}
+
+func isAnagramAlt2(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	ss := strings.Split(s, "")
+	st := strings.Split(t, "")
+
+	sort.Strings(ss)
+	sort.Strings(st)
+
+	return strings.Join(ss, "") == strings.Join(st, "")
 }
